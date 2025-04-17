@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --surface: 0 0% 100%;
+  --surface-foreground: 240 10% 3.9%;
+  --surface-light: 0 0% 95%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --surface: 240 7.3% 8%;
+  --surface-foreground: 0 0% 98%;
+  --surface-light: 240 5% 11%;
+}
+
+body {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+}
+
+.bg-background {
+  background-color: hsl(var(--background));
+}
+
+.bg-surface {
+  background-color: hsl(var(--surface));
+}
+
+.bg-surface-light {
+  background-color: hsl(var(--surface-light));
+}
+
+.text-foreground {
+  color: hsl(var(--foreground));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
